@@ -59,20 +59,6 @@ const searchResults =
 //  ..................{.['zebra technologies', 'zebra tatoo']}
 //  }
 
-//mergeAll
-// {
-//   ........{['zebra technologies', 'zebra tatoo']}..{['zebra animal', 'zebra printer']}
-// }
-//concatAll
-// {
-//   ...............................................{['zebra animal', 'zebra printer']}......{['zebra technologies', 'zebra tatoo']}
-// }
-//switch
-// {
-//   .....{['zebra technologies', 'zebra tatoo']}
-// }
-//
-
 searchResults.subscribe(resultsArr => {
   results.value = JSON.stringify(resultsArr);
 });

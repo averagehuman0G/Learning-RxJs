@@ -11,11 +11,9 @@ class Observable {
   static fromEvent(elem, eventType) {
     return new Observable(observer => {
       const handler = e => {
-        obserer.next(e);
+        observer.next(e);
       };
-      elem.addEventListener(eventType, e => {
-        observer.next(e.clientX);
-      });
+      elem.addEventListener(eventType, handler);
       return {
         unsubscribe() {
           elem.removeEventListener(eventType, handler);
@@ -25,10 +23,9 @@ class Observable {
   }
 }
 
-const clickMe = document.querySelector('#click');
-const clicks = Observable.fromEvent(clickMe, 'click');
+const click$ = Observable.fromEvent(document, 'click');
 
-clicks.subscribe({
+click$.subscribe({
   next(e) {
     console.log(e);
   },

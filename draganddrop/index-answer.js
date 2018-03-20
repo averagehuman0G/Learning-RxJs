@@ -23,7 +23,6 @@ function dragNDrop(elem, container) {
 
   // use the drags streams to do what you need to do
   drags.subscribe(e => {
-    console.log(e);
     elem.style.left = e.left + 'px';
     elem.style.top = e.top + 'px';
   });
